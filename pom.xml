@@ -230,7 +230,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <parallel>classes</parallel>
-                    <threadCount>perCoreThreadCount</threadCount>
+                    <threadCount>2</threadCount>
                 </configuration>
             </plugin>
             <plugin>
