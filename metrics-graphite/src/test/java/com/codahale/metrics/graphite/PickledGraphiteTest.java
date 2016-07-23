@@ -184,7 +184,7 @@ public class PickledGraphiteTest {
             bindings.put("payload", payload.substring(nextIndex));
             unpickleScript.eval(bindings);
             result.addAll(result.size(), (PyList) bindings.get("metrics"));
-            nextIndex += (Integer) bindings.get("batchLength");
+            nextIndex += (BigInteger) bindings.get("batchLength");
         }
 
         for (Object aResult : result) {
