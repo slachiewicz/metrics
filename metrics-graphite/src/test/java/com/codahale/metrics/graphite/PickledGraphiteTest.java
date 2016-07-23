@@ -39,12 +39,12 @@ public class PickledGraphiteTest {
     // Pulls apart the pickled payload. This skips ahead 4 characters to safely ignore
     // the header (length)
     private static final String UNPICKLER_SCRIPT =
-        "import cPickle\n" +
+            "import cPickle\n" +
             "import struct\n" +
             "format = '!L'\n" +
             "headerLength = struct.calcsize(format)\n" +
             "payloadLength, = struct.unpack(format, payload[:headerLength])\n" +
-            "batchLength = headerLength + payloadLength.intValue()\n" +
+            "batchLength = headerLength + payloadLength\n" +
             "metrics = cPickle.loads(payload[headerLength:batchLength])\n";
 
     private CompiledScript unpickleScript;
